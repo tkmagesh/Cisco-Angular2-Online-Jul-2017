@@ -1,0 +1,82 @@
+TypeScript = JavaScript + Type Safety
+
+
+Loosely typed - JavaScript, python
+Strongly typed - C#, Java, c, c++
+
+int x = 10;
+.
+.
+.
+.
+x = "abc";
+
+var x = 10;
+
+
+class Calculator
+	public static int add(int x, int y){
+		return x + y;
+	}
+}
+
+function add(x, y){
+	return x + y;
+}
+
+add(10,20)
+add(10,20,30,40)
+add(10,20,30,40,"50")
+add(10,20,30,40,"50", "abc")
+add([10,20],[30,40,["50", "abc"]])
+add(function(){ return [10,20]; },function(){ return [30,40,["50", "abc"]]; })
+
+
+function add(x,y){
+	if (typeof x !== 'number' || typeof y !== 'number')
+		throw new Error('Invalid arguments');
+	return x + y;
+}
+
+typescript = superset of javascript
+any javascript = valid typescript
+
+
+var n = 100;
+var n:number = 100;
+
+function add(x:number,y:number) : number{
+	return x + y;
+}
+
+typescript code -> typescript compiler -> javascript
+
+var n1 : string = '10',
+	n2 : string = '20';
+
+var result = add(n1, n2);
+
+
+ES6 (es6-features.org)
+========================
+let, const
+default arguments
+arrow functions
+array destructuring
+rest operator
+spread operator
+object destructuring
+classes & inheritence
+template strings
+
+
+
+1. Node.js
+	JavaScript Runtime
+
+	node package manage (npm)
+
+
+
+
+

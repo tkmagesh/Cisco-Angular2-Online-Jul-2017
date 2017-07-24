@@ -1,0 +1,15 @@
+create an empty folder
+
+for creating package.json
+> npm init
+
+install typescript compiler
+> npm install typescript --save-dev
+
+add the build script
+//in the package.json file, in "scripts" section add the following
+"build" : "tsc src/Employee.ts --outDir dist -w"
+
+
+create the 'src' and 'dist' folders
+> npm run build

@@ -1,0 +1,38 @@
+Angular
+	- Framework for RIA (Rich Internet Applications)
+
+
+
+Client
+-------
+1. Infrastructure
+		
+2. Powerful Browsers
+	Past
+		1. Http Client
+		2. Document Renderer
+
+	Present
+		OS (HTML5)
+		1. Data Storage
+			* Local Storage
+			* Session Storage
+			* IndexedDB
+
+		2. File System Access
+			* API
+
+		3. Multithreading 
+			* Web Workers
+
+		4. Socket Access
+			* Server Sent Events
+			* Web Sockets
+			* WebRTC
+
+		5. Application Host
+			* Offline Application Cache
+			* Service Worker
+
+		6. Device Access
+			* APIs

@@ -1,0 +1,19 @@
+{
+  "name": "typescript-demo",
+  "version": "0.1.0",
+  "description": "my first typescript app",
+  "main": "dist/Employee.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build" : "tsc src/Employee.ts --outDir dist -w"
+  },
+  "keywords": [
+    "typescript",
+    "demo"
+  ],
+  "author": "Magesh K",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^2.4.2"
+  }
+}
