@@ -1,29 +1,30 @@
 import { Component } from '@angular/core';
 
+import { CalculatorModel } from './CalculatorModel';
+
+
 @Component({
 	selector : 'calculator-one',
 	templateUrl : 'calculatorOne.component.html',
 	styleUrls : ['calculator.style.css']
 })
 export class CalculatorOneComponent{
-	number1 : number = 0;
-	number2 : number = 0;
-
-	result : number = 0;
+	
+	model : CalculatorModel = new CalculatorModel();
 
 	onAddClick(){
-		this.result = this.number1 + this.number2;
+		this.model.add();
 	}
 
 	onSubtractClick(){
-		this.result = this.number1 - this.number2;
+		this.model.subtract();
 	}
 
 	onMultiplyClick(){
-		this.result = this.number1 * this.number2;
+		this.model.multiply();
 	}
 
 	onDivideClick(){
-		this.result = this.number1 / this.number2;
+		this.model.divide();
 	}
 }
