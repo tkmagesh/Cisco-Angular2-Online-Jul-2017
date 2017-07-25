@@ -1,0 +1,7 @@
+<h1>Greeter</h1>
+<hr>
+<label>Name :</label>
+<input type="text" #txtUserName>
+<input type="button" value="Greet" (click)="onGreetClick(txtUserName.value)">
+<p>{{message}}</p>
+<input type="button" value="Clear" (click)="onClearClick()">

@@ -1,0 +1,36 @@
+Building Blocks of Angular
+
+1. Module
+	Package in java
+	Logical container of other entities
+
+2. Component (UI)
+	UI + Behavior
+	Input & Output
+	State and View synchronization
+
+3. Directive (UI)
+	DOM Manipulation
+
+4. Pipe (UI)
+	Transform data for presentation
+
+5. Service (Non UI)
+
+
+angular-cli
+
+sudo npm install @angular/cli   -g
+
+ng new hello-world-app
+
+tsconfig.json - typescript compiler configuration
+
+jasmine.js - testing framework
+
+karma.conf.js - karma is test runner 
+
+protractor.conf.js - protractor for e2e testing
+
+tslint.js - tslint is for static code analysis
+
