@@ -12,4 +12,9 @@ export class CalculatorTwoComponent{
 	model : CalculatorModel = new CalculatorModel();
 
 	selectedOperation : string = '';
+
+	calculate(){
+		if (this.selectedOperation)
+			this.model[this.selectedOperation]();
+	}
 }
