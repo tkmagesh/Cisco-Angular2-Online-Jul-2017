@@ -14,7 +14,9 @@ export class CalculatorTwoComponent{
 	selectedOperation : string = '';
 
 	calculate(){
-		switch (this.selectedOperation) {
+		this.model[this.selectedOperation]();
+
+		/*switch (this.selectedOperation) {
 			case "add":
 				this.model.add();
 				break;
@@ -27,6 +29,6 @@ export class CalculatorTwoComponent{
 			case "divide":
 				this.model.divide();
 				break;
-		}
+		}*/
 	}
 }
