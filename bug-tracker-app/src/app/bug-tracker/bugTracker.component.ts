@@ -15,6 +15,10 @@ export class BugTrackerComponent{
 		};
 		this.bugs.push(newBug);
 	}
+
+	onBugNameClick(bug : IBug){
+		bug.isClosed = !bug.isClosed;
+	}
 }
 
 interface IBug{

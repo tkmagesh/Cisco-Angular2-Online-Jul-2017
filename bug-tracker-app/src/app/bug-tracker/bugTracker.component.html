@@ -20,7 +20,12 @@
 <section class="list">
 	<ol>
 		<li *ngFor="let bug of bugs">
-			<span class="bugname">{{bug | json}}</span>
+			<span 
+				class="bugname" 
+				(click)="onBugNameClick(bug)"
+				[ngClass]="{closed : bug.isClosed}">
+					{{bug | json}}
+			</span>
 			<div class="datetime">[created at]</div>
 		</li>
 
