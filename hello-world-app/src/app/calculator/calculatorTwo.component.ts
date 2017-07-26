@@ -9,6 +9,24 @@ import { CalculatorModel } from './CalculatorModel';
 	styleUrls : ['calculator.style.css']
 })
 export class CalculatorTwoComponent{
-	
 	model : CalculatorModel = new CalculatorModel();
+
+	selectedOperation : string = '';
+
+	calculate(){
+		switch (this.selectedOperation) {
+			case "add":
+				this.model.add();
+				break;
+			case "subtract":
+				this.model.subtract();
+				break;
+			case "multiply":
+				this.model.multiply();
+				break;
+			case "divide":
+				this.model.divide();
+				break;
+		}
+	}
 }
