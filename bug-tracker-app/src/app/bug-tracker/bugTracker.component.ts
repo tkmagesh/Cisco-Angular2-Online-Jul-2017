@@ -6,9 +6,18 @@ import { Component } from '@angular/core';
 	styleUrls : ['bugTracker.component.css']
 })
 export class BugTrackerComponent{
-	bugs : string[] = [];
+	bugs : IBug[] = [];
 
 	onCreateClick(bugName){
-		this.bugs.push(bugName);
+		let newBug : IBug = {
+			name : bugName,
+			isClosed : false
+		};
+		this.bugs.push(newBug);
 	}
+}
+
+interface IBug{
+	name : string,
+	isClosed : boolean
 }
