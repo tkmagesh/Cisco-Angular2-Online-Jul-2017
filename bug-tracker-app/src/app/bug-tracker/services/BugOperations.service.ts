@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { IBug } from '../models/IBug';
 
-@Injectable()
+
 export class BugOperationsService{
 	createNew(id : number, bugName : string) : IBug{
 		let newBug : IBug = {
