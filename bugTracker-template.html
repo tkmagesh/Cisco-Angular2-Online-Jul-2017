@@ -11,7 +11,23 @@
 		5. Display statistics (# of closed bugs / total # of bugs)
 		6. Improve the bug display
 		7. Sort the bugs
-		8. Persist the bugs in the browser storage
+		
+		8. Persist the bugs in the browser storage (localStorage)
+			window.localStorage
+			===================
+			* Key/Value store
+			* Both key and value must be strings
+				- Use JSON.stringify and JSON.parse for serialization and deserialization
+			* Same Origin Policy (SOP)
+			* APIs
+			------
+				- setItem(key, value)
+				- getItem(key) => value
+				- removeItem(key)
+				- clear()
+				- key(index) => key at index
+				- length
+
 		9. Display 'createdAt'
 		10. Persist the bugs in the server
 		11. Make the bugs accessible through unique urls
