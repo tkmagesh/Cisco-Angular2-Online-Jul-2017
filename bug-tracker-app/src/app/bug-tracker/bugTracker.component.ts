@@ -11,7 +11,7 @@ export class BugTrackerComponent{
 
 	sortBy : string = '';
 	orderByDescending : boolean = false;
-	
+
 	constructor(){
 		this.bugs.push({name : 'Server communication failure', isClosed : false});
 		this.bugs.push({name : 'Application is not responsive', isClosed : false});
@@ -32,7 +32,7 @@ export class BugTrackerComponent{
 			name : bugName,
 			isClosed : false
 		};
-		this.bugs.push(newBug);
+		this.bugs = [...this.bugs, newBug];
 	}
 
 	onBugNameClick(bug : IBug){
