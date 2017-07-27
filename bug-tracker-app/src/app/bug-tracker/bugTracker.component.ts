@@ -9,6 +9,14 @@ import { IBug } from './models/IBug';
 export class BugTrackerComponent{
 	bugs : IBug[] = [];
 
+	sortBy : string = '';
+	
+	constructor(){
+		this.bugs.push({name : 'Server communication failure', isClosed : false});
+		this.bugs.push({name : 'Application is not responsive', isClosed : false});
+		this.bugs.push({name : 'User actions not recognized', isClosed : true});
+		this.bugs.push({name : 'Data integrity checks failed', isClosed : true});
+	}
 	getClosedCount(){
 		let closedCount = 0;
 		for(let index = 0; index < this.bugs.length; index++){
