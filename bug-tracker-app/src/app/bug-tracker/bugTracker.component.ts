@@ -10,6 +10,7 @@ export class BugTrackerComponent{
 	bugs : IBug[] = [];
 
 	sortBy : string = '';
+	orderByDescending : boolean = false;
 	
 	constructor(){
 		this.bugs.push({name : 'Server communication failure', isClosed : false});
