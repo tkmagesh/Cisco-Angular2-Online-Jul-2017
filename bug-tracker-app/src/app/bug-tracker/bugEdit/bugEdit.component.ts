@@ -20,7 +20,7 @@ export class BugEditComponent{
 	constructor(private bugServer : BugServerService){
 
 	}
-	
+
 	onCreateClick(bugName){
 		this.bugServer
 			.addNew(bugName)

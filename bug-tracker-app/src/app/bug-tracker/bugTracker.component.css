@@ -1,7 +1,9 @@
 section{
 	margin-bottom: 10px;
 }
-.bugname, .stats{
+
+
+.bugname, /deep/ .stats{
 	font-size: 22pt;
 }
 .bugname{
@@ -19,7 +21,7 @@ li{
 	border : 2px solid gray;
 	background-color: #e7e7e7;
 }
-.closed{
+/deep/ .closed{
 	color : red;
 	text-decoration: line-through;
 	font-style: italic;
