@@ -27,11 +27,31 @@ var app = (function(){
 		addAsync(x,y, function(result){
 			console.log(`[@Client] result = ${result}`)	
 		});
-		
 	}
+
+	var addAsyncEvents = (function(){
+		var callbacks = [];
+		function process(x,y){
+			console.log(`	[@Service] processing ${x} and ${y}`);
+			setTimeout(function(){
+				var result = x + y;
+				console.log(`	[@Service] returning result`);
+				callbacks.forEach(callback => callback(result));
+			}, 4000);
+		}
+		function subscribe(callback){
+			if (typeof callback === 'function')
+				callbacks.push(callback);
+		}
+		return{
+			process : process,
+			subscribe : subscribe
+		}
+	})();
 
 	return {
 		addSyncClient : addSyncClient,
-		addAsyncClient : addAsyncClient
+		addAsyncClient : addAsyncClient,
+		addAsyncEvents : addAsyncEvents
 	}
 })();
