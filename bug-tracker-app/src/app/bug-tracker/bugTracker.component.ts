@@ -27,10 +27,8 @@ export class BugTrackerComponent implements OnInit{
 			.subscribe(bugs => this.bugs = bugs);
 	}
 
-	onCreateClick(bugName){
-		this.bugServer
-			.addNew(bugName)
-			.subscribe(newBug => this.bugs = [...this.bugs, newBug]);
+	onNewBug(bug){
+		this.bugs = [...this.bugs, bug];
 	}
 
 	onBugNameClick(bugToToggle : IBug){

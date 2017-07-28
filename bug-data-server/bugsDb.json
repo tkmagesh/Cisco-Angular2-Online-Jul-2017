@@ -17,6 +17,12 @@
       "name": "Server communication failure",
       "isClosed": false,
       "createdAt": "2017-07-28T06:22:53.433Z"
+    },
+    {
+      "id": 8,
+      "name": "User actions are not recognized",
+      "isClosed": false,
+      "createdAt": "2017-07-28T06:45:37.686Z"
     }
   ],
   "employees": [
