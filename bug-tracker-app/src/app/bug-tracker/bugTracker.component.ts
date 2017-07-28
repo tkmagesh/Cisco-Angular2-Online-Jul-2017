@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { IBug } from './models/IBug';
-import { BugStorageService } from './services/BugStorage.service';
+
+import { BugServerService } from './services/BugServer.service';
 
 
 @Component({
@@ -8,31 +9,46 @@ import { BugStorageService } from './services/BugStorage.service';
 	templateUrl : 'bugTracker.component.html',
 	styleUrls : ['bugTracker.component.css']
 })
-export class BugTrackerComponent{
+export class BugTrackerComponent implements OnInit{
 	bugs : IBug[] = [];
 
 	sortBy : string = '';
 	orderByDescending : boolean = false;
 	
 
-	constructor(private bugStorage : BugStorageService){
-		this.bugs = this.bugStorage.getAll();
+	constructor(private bugServer : BugServerService){
+		
+		this.bugs = [];
+	}
+
+	ngOnInit(){
+		this.bugServer
+			.getAll()
+			.subscribe(bugs => this.bugs = bugs);
 	}
 
 	onCreateClick(bugName){
-		let newBug = this.bugStorage.addNew(bugName);
-		this.bugs = [...this.bugs, newBug];
+		this.bugServer
+			.addNew(bugName)
+			.subscribe(newBug => this.bugs = [...this.bugs, newBug]);
 	}
 
-	onBugNameClick(bug : IBug){
-		this.bugStorage.toggle(bug);
+	onBugNameClick(bugToToggle : IBug){
+		this.bugServer
+			.toggle(bugToToggle)
+			.subscribe(toggledBug => this.bugs = this.bugs.map(bug => bugToToggle.id === bug.id ? toggledBug : bug));
 	}
 
 	onRemoveClosedClick(){
 		this.bugs
-			.filter(bug => bug.isClosed)
-			.forEach(bug => this.bugStorage.remove(bug));
-		this.bugs = this.bugs.filter(bug => !bug.isClosed);
+			.forEach((bug, index) => {
+				if (bug.isClosed){
+					this.bugServer
+						.remove(bug)
+						.subscribe(response => this.bugs.splice(index, 1))
+				}
+			});
+
 	}
 }
 
